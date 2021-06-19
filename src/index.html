@@ -4,12 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/uikit/dist/css/uikit.min.css" />
+    <script src="node_modules/uikit/dist/js/uikit.min.js"></script>
+    <script src="node_modules/uikit/dist/js/uikit-icons.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <style>
         #sendMessage {
-            width: 400px;
+            width: 600px;
         }
         #receiveMessage {
-            width: 400px;
+            width: 600px;
             height: 150px;
         }
     </style>
@@ -17,13 +21,235 @@
 
 <body>
     <main>
-        <section>
-            <input type="text" id="sendMessage">
-            <button onclick='send()'>send</button>
+        <section class="uk-section-xsmall">
+            <div>
+                <input type="text" id="sendMessage">
+                <a class="uk-icon-button uk-button-default" uk-icon="upload" onclick="send()"></a>
+            </div>
+            <div>
+                <textarea id="receiveMessage"></textarea>
+                <a class="uk-icon-button uk-button-default" uk-icon="trash" onclick="clearReceiveMessage()"></a>
+            </div>
         </section>
-        <section>
-            <textarea id="receiveMessage"></textarea>
-            <button onclick='clearReceiveMessage()'>clear</button>
+
+        <section class="uk-section-xsmall">
+            <h2>MemoryBank</h2>
+            <div>
+                <a class="uk-icon-button uk-button-default" uk-icon="download" onclick="loadMemoryBank()"></a>
+                <a class="uk-icon-button uk-button-default" uk-icon="upload" onclick="saveMemoryBank()"></a>
+            </div>
+            <div>
+                <table id="memoryBankTable" class="uk-table uk-table-small uk-table-striped uk-table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Protect</th>
+                            <th>Title</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-memory-bank-number="00">
+                            <td data-for="bank-number">00</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="01">
+                            <td data-for="bank-number">01</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="02">
+                            <td data-for="bank-number">02</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="03">
+                            <td data-for="bank-number">03</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="04">
+                            <td data-for="bank-number">04</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="05">
+                            <td data-for="bank-number">05</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="06">
+                            <td data-for="bank-number">06</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="07">
+                            <td data-for="bank-number">07</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="08">
+                            <td data-for="bank-number">08</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="09">
+                            <td data-for="bank-number">09</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="10">
+                            <td data-for="bank-number">10</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="11">
+                            <td data-for="bank-number">11</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="12">
+                            <td data-for="bank-number">12</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="13">
+                            <td data-for="bank-number">13</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="14">
+                            <td data-for="bank-number">14</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="15">
+                            <td data-for="bank-number">15</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="16">
+                            <td data-for="bank-number">16</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="17">
+                            <td data-for="bank-number">17</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="18">
+                            <td data-for="bank-number">18</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="19">
+                            <td data-for="bank-number">19</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="20">
+                            <td data-for="bank-number">20</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="21">
+                            <td data-for="bank-number">21</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="22">
+                            <td data-for="bank-number">22</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="23">
+                            <td data-for="bank-number">23</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="24">
+                            <td data-for="bank-number">24</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="25">
+                            <td data-for="bank-number">25</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="26">
+                            <td data-for="bank-number">26</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="27">
+                            <td data-for="bank-number">27</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="28">
+                            <td data-for="bank-number">28</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="29">
+                            <td data-for="bank-number">29</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="30">
+                            <td data-for="bank-number">30</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="31">
+                            <td data-for="bank-number">31</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="32">
+                            <td data-for="bank-number">32</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="33">
+                            <td data-for="bank-number">33</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="34">
+                            <td data-for="bank-number">34</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="35">
+                            <td data-for="bank-number">35</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="36">
+                            <td data-for="bank-number">36</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="37">
+                            <td data-for="bank-number">37</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="38">
+                            <td data-for="bank-number">38</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                        <tr data-memory-bank-number="39">
+                            <td data-for="bank-number">39</td>
+                            <td data-for="bank-protect"></td>
+                            <td data-for="bank-title"></td>
+                        </tr>
+                    </tbody>
+                </table>
         </section>
     </main>
 
@@ -32,17 +258,65 @@
         const objSendMessage = document.getElementById('sendMessage');
         const objReceiveMessage = document.getElementById('receiveMessage');
 
+        const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
         ws.onmessage = (e) => {
-            console.log(e);
             objReceiveMessage.value += e.data + '\n';
+
+            if (e.data.startsWith('20MW')) {
+                setMemoryBankTable(e.data);
+            }
         }
 
         function send() {
             ws.send(objSendMessage.value);
+            return false;
+        }
+
+        function send2(msg) {
+            ws.send(msg);
+            return false;
         }
 
         function clearReceiveMessage() {
             objReceiveMessage.value = '';
+            return false;
+        }
+
+        async function loadMemoryBank() {
+            for (let i = 0; i <= 39; i++) {
+                send2('MW' + ('0' + i).substr(-2));
+                await _sleep(200);
+            }
+            return false;
+        }
+
+        function setMemoryBankTable(msg) {
+            let _number, _protect, _title, _$tr;
+            _number = msg.substr(4, 2);
+            _protect = msg.substr(9, 1);
+            switch (_protect) {
+                case '0':
+                    _protect = 'OFF';
+                    break;
+                case '1':
+                    _protect = 'ON';
+                    break;
+            }
+            _title = msg.substr(13);
+            _$tr = $('#memoryBankTable tbody tr').filter(function() {
+                return $(this).data('memory-bank-number') === _number
+            });
+            _$tr.find('td').filter(function() {
+                return $(this).data('for') === 'bank-protect'
+            }).text(_protect);
+            _$tr.find('td').filter(function() {
+                return $(this).data('for') === 'bank-title'
+            }).text(_title);
+        }
+
+        function saveMemoryBank() {
+            return false;
         }
     </script>
 </body>
