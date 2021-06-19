@@ -13,7 +13,7 @@ ws.onmessage = (e) => {
 }
 
 function send() {
-    ws.send(objSendMessage.value);
+    send2(objSendMessage.value);
     return false;
 }
 
@@ -27,6 +27,22 @@ function clearReceiveMessage() {
     return false;
 }
 
+function getProtectHtml(protect) {
+    let _protect;
+    switch (protect) {
+        case '0':
+            _protect = '<span uk-icon="unlock"></span>';
+            break;
+        case '1':
+            _protect = '<span uk-icon="lock"></span>';
+            break;
+    }
+    return _protect;
+}
+
+// 
+// ----- MemoryBank -----
+// 
 async function loadMemoryBank() {
     for (let i = 0; i <= 39; i++) {
         send2('MW' + ('0' + i).substr(-2));
@@ -38,27 +54,14 @@ async function loadMemoryBank() {
 function setMemoryBankTable(msg) {
     let _number, _protect, _title, _$tr;
     _number = msg.substr(4, 2);
-    _protect = msg.substr(9, 1);
-    switch (_protect) {
-        case '0':
-            _protect = 'OFF';
-            break;
-        case '1':
-            _protect = 'ON';
-            break;
-    }
+    _protect = getProtectHtml(msg.substr(9, 1));
     _title = msg.substr(13);
-    _$tr = $('#memoryBankTable tbody tr').filter(function() {
-        return $(this).data('memory-bank-number') === _number
-    });
-    _$tr.find('td').filter(function() {
-        return $(this).data('for') === 'bank-protect'
-    }).text(_protect);
-    _$tr.find('td').filter(function() {
-        return $(this).data('for') === 'bank-title'
-    }).text(_title);
+    _$tr = $('#memoryBankTable tbody').find('tr[data-memory-bank-number="' + _number + '"]');
+    _$tr.find('td[data-for="bank-protect"]').html(_protect);
+    _$tr.find('td[data-for="bank-title"]').text(_title);
 }
 
 function saveMemoryBank() {
+    // TODO
     return false;
 }
