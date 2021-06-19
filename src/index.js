@@ -128,6 +128,9 @@ function getModeText(mode) {
         case '8':
             _mode = 'T-DM';
             break;
+        case '9':
+            _mode = 'T-TC';
+            break;
     }
     return _mode;
 }
