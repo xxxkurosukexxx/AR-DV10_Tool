@@ -251,6 +251,574 @@
                     </tbody>
                 </table>
         </section>
+
+        <section class="uk-section-xsmall">
+            <h2>MemoryChannel</h2>
+            <div>
+                <select id="memoryChannelBankSelect" class="uk-select uk-form-width-xsmall">
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                </select>
+                <a class="uk-icon-button uk-button-default" uk-icon="download" onclick="loadMemoryChannel()"></a>
+                <a class="uk-icon-button uk-button-default" uk-icon="upload" onclick="saveMemoryChannel()"></a>
+            </div>
+            <div>
+                <table id="memoryChannelTable" class="uk-table uk-table-small uk-table-striped uk-table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Pass</th>
+                            <th>ReceiveFrequency</th>
+                            <th>AdjustFrequency</th>
+                            <th>StepAdjustFrequency</th>
+                            <th>Mode</th>
+                            <th>Protect</th>
+                            <th>Title</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-memory-channel-number="00">
+                            <td data-for="channel-number">00</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="01">
+                            <td data-for="channel-number">01</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="02">
+                            <td data-for="channel-number">02</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="03">
+                            <td data-for="channel-number">03</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="04">
+                            <td data-for="channel-number">04</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="05">
+                            <td data-for="channel-number">05</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="06">
+                            <td data-for="channel-number">06</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="07">
+                            <td data-for="channel-number">07</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="08">
+                            <td data-for="channel-number">08</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="09">
+                            <td data-for="channel-number">09</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="10">
+                            <td data-for="channel-number">10</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="11">
+                            <td data-for="channel-number">11</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="12">
+                            <td data-for="channel-number">12</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="13">
+                            <td data-for="channel-number">13</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="14">
+                            <td data-for="channel-number">14</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="15">
+                            <td data-for="channel-number">15</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="16">
+                            <td data-for="channel-number">16</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="17">
+                            <td data-for="channel-number">17</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="18">
+                            <td data-for="channel-number">18</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="19">
+                            <td data-for="channel-number">19</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="20">
+                            <td data-for="channel-number">20</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="21">
+                            <td data-for="channel-number">21</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="22">
+                            <td data-for="channel-number">22</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="23">
+                            <td data-for="channel-number">23</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="24">
+                            <td data-for="channel-number">24</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="25">
+                            <td data-for="channel-number">25</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="26">
+                            <td data-for="channel-number">26</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="27">
+                            <td data-for="channel-number">27</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="28">
+                            <td data-for="channel-number">28</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="29">
+                            <td data-for="channel-number">29</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="30">
+                            <td data-for="channel-number">30</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="31">
+                            <td data-for="channel-number">31</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="32">
+                            <td data-for="channel-number">32</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="33">
+                            <td data-for="channel-number">33</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="34">
+                            <td data-for="channel-number">34</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="35">
+                            <td data-for="channel-number">35</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="36">
+                            <td data-for="channel-number">36</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="37">
+                            <td data-for="channel-number">37</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="38">
+                            <td data-for="channel-number">38</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="39">
+                            <td data-for="channel-number">39</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="40">
+                            <td data-for="channel-number">40</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="41">
+                            <td data-for="channel-number">41</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="42">
+                            <td data-for="channel-number">42</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="43">
+                            <td data-for="channel-number">43</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="44">
+                            <td data-for="channel-number">44</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="45">
+                            <td data-for="channel-number">45</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="46">
+                            <td data-for="channel-number">46</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="47">
+                            <td data-for="channel-number">47</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="48">
+                            <td data-for="channel-number">48</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                        <tr data-memory-channel-number="49">
+                            <td data-for="channel-number">49</td>
+                            <td data-for="channel-pass"></td>
+                            <td data-for="channel-receive-frequency"></td>
+                            <td data-for="channel-adjust-frequency"></td>
+                            <td data-for="channel-step-adjust-frequency"></td>
+                            <td data-for="channel-mode"></td>
+                            <td data-for="channel-protect"></td>
+                            <td data-for="channel-title"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <script src="index.js"></script>
