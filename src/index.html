@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #sendMessage {
+            width: 400px;
+        }
+        #receiveMessage {
+            width: 400px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <input type="text" id="sendMessage">
+            <button onclick='send()'>send</button>
+        </section>
+        <section>
+            <textarea id="receiveMessage"></textarea>
+            <button onclick='clearReceiveMessage()'>clear</button>
+        </section>
+    </main>
+
+    <script>
+        const ws = new WebSocket('ws://localhost:8080');
+        const objSendMessage = document.getElementById('sendMessage');
+        const objReceiveMessage = document.getElementById('receiveMessage');
+
+        ws.onmessage = (e) => {
+            console.log(e);
+            objReceiveMessage.value += e.data + '\n';
+        }
+
+        function send() {
+            ws.send(objSendMessage.value);
+        }
+
+        function clearReceiveMessage() {
+            objReceiveMessage.value = '';
+        }
+    </script>
+</body>
+
+</html>
