@@ -34,6 +34,32 @@
                 <textarea id="receiveMessage" class="uk-textarea uk-width-xlarge uk-height-medium"></textarea>
                 <a class="uk-icon-button uk-button-default" uk-icon="trash" uk-tooltip="Clear" onclick="clearReceiveMessage()"></a>
             </div>
+            <div class="uk-section-xsmall">
+                <select id="receiveVfo" class="uk-select uk-form-width-small">
+                    <option value="A">VFO-A</option>
+                    <option value="B">VFO-B</option>
+                    <option value="Z">VFO-Z</option>
+                </select>
+                <input type="text" id="receiveFrequency" class="uk-input uk-width-small"> MHz 
+                <select id="receiveMode" class="uk-select uk-form-width-small">
+                    <option value="110">D-STAR</option>
+                    <option value="220">YAESU</option>
+                    <option value="330">ALINCO</option>
+                    <option value="440">D-CR/NXDN</option>
+                    <option value="550">P25</option>
+                    <option value="660">dPMR</option>
+                    <option value="770">DMR</option>
+                    <option value="880">T-DM</option>
+                    <option value="0F0">FM</option>
+                    <option value="0F1">AM</option>
+                    <option value="0F2">SAH</option>
+                    <option value="0F3">SAL</option>
+                    <option value="0F4">USB</option>
+                    <option value="0F5">LSB</option>
+                    <option value="0F6">CW</option>
+                </select>
+                <a class="uk-icon-button uk-button-default" uk-icon="bolt" uk-tooltip="Listen" onclick="listen()"></a>
+            </div>
         </section>
 
         <section id="section-memoryBank" class="uk-padding-small">

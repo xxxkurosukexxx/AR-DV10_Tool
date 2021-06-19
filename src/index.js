@@ -12,6 +12,25 @@ ws.onmessage = (e) => {
     }
 }
 
+async function listen() {
+    let _vfo, _frequency, _mode;
+    _vfo = $('#receiveVfo').val();
+    _frequency = $('#receiveFrequency').val();
+    _mode = $('#receiveMode').val();
+
+    if (_frequency == '') {
+        return;
+    }
+
+    if (_frequency.indexOf('.') === -1) {
+        _frequency += '.0';
+    }
+
+    send2('VF' + _vfo + ' RF' + _frequency);
+    send2('MD' + _mode);
+    send2('IF0');
+}
+
 function send() {
     send2($('#sendMessage').val());
     return false;
