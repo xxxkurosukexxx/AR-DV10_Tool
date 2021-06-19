@@ -20,8 +20,21 @@
 </head>
 
 <body>
+    <header>
+        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+            <nav class="uk-navbar-container">
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li><a href="#section-top" uk-scroll="offset: 80">Top</a></li>
+                        <li><a href="#section-memoryBank" uk-scroll="offset: 80">MemoryBank</a></li>
+                        <li><a href="#section-memoryChannel" uk-scroll="offset: 80">MemoryChannel</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
     <main>
-        <section class="uk-section-xsmall">
+        <section id="section-top" class="uk-padding-small">
             <div>
                 <input type="text" id="sendMessage" class="uk-input">
                 <a class="uk-icon-button uk-button-default" uk-icon="upload" onclick="send()"></a>
@@ -32,8 +45,8 @@
             </div>
         </section>
 
-        <section class="uk-section-xsmall">
-            <h2>MemoryBank</h2>
+        <section id="section-memoryBank" class="uk-padding-small">
+            <h2 class="uk-heading-line"><span>MemoryBank</span></h2>
             <div>
                 <a class="uk-icon-button uk-button-default" uk-icon="download" onclick="loadMemoryBank()"></a>
                 <a class="uk-icon-button uk-button-default" uk-icon="upload" onclick="saveMemoryBank()"></a>
@@ -250,10 +263,11 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
         </section>
 
-        <section class="uk-section-xsmall">
-            <h2>MemoryChannel</h2>
+        <section id="section-memoryChannel" class="uk-padding-small">
+            <h2 class="uk-heading-line"><span>MemoryChannel</span></h2>
             <div>
                 <select id="memoryChannelBankSelect" class="uk-select uk-form-width-xsmall">
                     <option value="00">00</option>
