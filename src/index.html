@@ -68,6 +68,7 @@
             <div>
                 <a class="uk-icon-button uk-button-default" uk-icon="download" uk-tooltip="Download Memory Bank" onclick="loadMemoryBank()"></a>
                 <a class="uk-icon-button uk-button-default" uk-icon="upload" uk-tooltip="Upload Memory Bank" onclick="saveMemoryBank()"></a>
+                <progress id="memoryBankProgress" class="uk-progress" value="0" max="40"></progress>
             </div>
             <div>
                 <table id="memoryBankTable" class="uk-table uk-table-small uk-table-striped uk-table-hover">
@@ -331,6 +332,7 @@
                 </select>
                 <a class="uk-icon-button uk-button-default" uk-icon="download" uk-tooltip="Download Memory Channel" onclick="loadMemoryChannel()"></a>
                 <a class="uk-icon-button uk-button-default" uk-icon="upload" uk-tooltip="Upload Memory Channel" onclick="saveMemoryChannel()"></a>
+                <progress id="memoryChannelProgress" class="uk-progress" value="0" max="50"></progress>
             </div>
             <div>
                 <table id="memoryChannelTable" class="uk-table uk-table-small uk-table-striped uk-table-hover">

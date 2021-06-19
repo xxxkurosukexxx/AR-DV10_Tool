@@ -139,9 +139,13 @@ function getModeText(mode) {
 // ----- MemoryBank -----
 // 
 async function loadMemoryBank() {
+    let _progress;
+    _progress = document.getElementById('memoryBankProgress');
+    _progress.value = 0;
     clearMemoryBankTable();
     for (let i = 0; i <= 39; i++) {
         send2('MW' + ('0' + i).substr(-2));
+        _progress.value += 1;
         await _sleep(200);
     }
     return false;
@@ -170,10 +174,14 @@ function saveMemoryBank() {
 // ----- MemoryChannel -----
 // 
 async function loadMemoryChannel() {
+    let _progress;
+    _progress = document.getElementById('memoryChannelProgress');
+    _progress.value = 0;
     clearMemoryChannelTable();
     let _bank = $('#memoryChannelBankSelect').val();
     for (let i = 0; i <= 49; i++) {
         send2('MA' + _bank + ('0' + i).substr(-2));
+        _progress.value += 1;
         await _sleep(200);
     }
     return false;
