@@ -8,15 +8,6 @@
     <script src="node_modules/uikit/dist/js/uikit.min.js"></script>
     <script src="node_modules/uikit/dist/js/uikit-icons.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <style>
-        #sendMessage {
-            width: 600px;
-        }
-        #receiveMessage {
-            width: 600px;
-            height: 150px;
-        }
-    </style>
 </head>
 
 <body>
@@ -35,21 +26,21 @@
     </header>
     <main>
         <section id="section-top" class="uk-padding-small">
-            <div>
-                <input type="text" id="sendMessage" class="uk-input">
-                <a class="uk-icon-button uk-button-default" uk-icon="upload" onclick="send()"></a>
+            <div class="uk-section-xsmall">
+                <input type="text" id="sendMessage" class="uk-input uk-width-xlarge">
+                <a class="uk-icon-button uk-button-default" uk-icon="upload" uk-tooltip="Send Message" onclick="send()"></a>
             </div>
-            <div>
-                <textarea id="receiveMessage" class="uk-textarea"></textarea>
-                <a class="uk-icon-button uk-button-default" uk-icon="trash" onclick="clearReceiveMessage()"></a>
+            <div class="uk-section-xsmall">
+                <textarea id="receiveMessage" class="uk-textarea uk-width-xlarge uk-height-medium"></textarea>
+                <a class="uk-icon-button uk-button-default" uk-icon="trash" uk-tooltip="Clear" onclick="clearReceiveMessage()"></a>
             </div>
         </section>
 
         <section id="section-memoryBank" class="uk-padding-small">
             <h2 class="uk-heading-line"><span>MemoryBank</span></h2>
             <div>
-                <a class="uk-icon-button uk-button-default" uk-icon="download" onclick="loadMemoryBank()"></a>
-                <a class="uk-icon-button uk-button-default" uk-icon="upload" onclick="saveMemoryBank()"></a>
+                <a class="uk-icon-button uk-button-default" uk-icon="download" uk-tooltip="Download Memory Bank" onclick="loadMemoryBank()"></a>
+                <a class="uk-icon-button uk-button-default" uk-icon="upload" uk-tooltip="Upload Memory Bank" onclick="saveMemoryBank()"></a>
             </div>
             <div>
                 <table id="memoryBankTable" class="uk-table uk-table-small uk-table-striped uk-table-hover">
@@ -311,8 +302,8 @@
                     <option value="38">38</option>
                     <option value="39">39</option>
                 </select>
-                <a class="uk-icon-button uk-button-default" uk-icon="download" onclick="loadMemoryChannel()"></a>
-                <a class="uk-icon-button uk-button-default" uk-icon="upload" onclick="saveMemoryChannel()"></a>
+                <a class="uk-icon-button uk-button-default" uk-icon="download" uk-tooltip="Download Memory Channel" onclick="loadMemoryChannel()"></a>
+                <a class="uk-icon-button uk-button-default" uk-icon="upload" uk-tooltip="Upload Memory Channel" onclick="saveMemoryChannel()"></a>
             </div>
             <div>
                 <table id="memoryChannelTable" class="uk-table uk-table-small uk-table-striped uk-table-hover">

@@ -1,11 +1,9 @@
 const ws = new WebSocket('ws://localhost:8080');
-const objSendMessage = document.getElementById('sendMessage');
-const objReceiveMessage = document.getElementById('receiveMessage');
 
 const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 ws.onmessage = (e) => {
-    objReceiveMessage.value += e.data + '\n';
+    $('#receiveMessage').val($('#receiveMessage').val() + '---> ' + e.data + '\n');
 
     if (e.data.startsWith('20MW')) {
         setMemoryBankTable(e.data);
@@ -15,18 +13,19 @@ ws.onmessage = (e) => {
 }
 
 function send() {
-    send2(objSendMessage.value);
+    send2($('#sendMessage').val());
     return false;
 }
 
 function send2(msg) {
+    //$('#sendMessage').val(msg);
+    $('#receiveMessage').val($('#receiveMessage').val() + '<--- ' + msg + '\n');
     ws.send(msg);
     return false;
 }
 
 function clearReceiveMessage() {
-    objReceiveMessage.value = '';
-    return false;
+    $('#receiveMessage').val('');
 }
 
 function getProtectHtml(protect) {
@@ -107,6 +106,9 @@ function getModeText(mode) {
         case '7':
             _mode = 'DMR';
             break;
+        case '8':
+            _mode = 'T-DM';
+            break;
     }
     return _mode;
 }
@@ -115,11 +117,16 @@ function getModeText(mode) {
 // ----- MemoryBank -----
 // 
 async function loadMemoryBank() {
+    clearMemoryBankTable();
     for (let i = 0; i <= 39; i++) {
         send2('MW' + ('0' + i).substr(-2));
         await _sleep(200);
     }
     return false;
+}
+
+function clearMemoryBankTable() {
+    $('#memoryBankTable tbody tr td:not([data-for="bank-number"])').text('');
 }
 
 function setMemoryBankTable(msg) {
@@ -141,12 +148,17 @@ function saveMemoryBank() {
 // ----- MemoryChannel -----
 // 
 async function loadMemoryChannel() {
+    clearMemoryChannelTable();
     let _bank = $('#memoryChannelBankSelect').val();
     for (let i = 0; i <= 49; i++) {
         send2('MA' + _bank + ('0' + i).substr(-2));
         await _sleep(200);
     }
     return false;
+}
+
+function clearMemoryChannelTable() {
+    $('#memoryChannelTable tbody tr td:not([data-for="channel-number"])').text('');
 }
 
 function setMemoryChannelTable(msg) {
